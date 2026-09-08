@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Nepal Phone</title>
+  <desc id="desc">A modern red and blue banner for a Nepali phone number utility package.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071b35"/>
+      <stop offset="1" stop-color="#123d61"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#dc143c"/>
+      <stop offset="1" stop-color="#ff6b6b"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="15" flood-color="#000" flood-opacity=".28"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+  <circle cx="1040" cy="20" r="190" fill="#dc143c" opacity=".12">
+    <animate attributeName="r" values="190;215;190" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <path d="M0 290 C220 220 330 370 560 280 S920 220 1200 300 V360 H0Z" fill="#0d2e4e"/>
+  <g transform="translate(90 78)" filter="url(#shadow)">
+    <path d="M0 0h50l38 56-38 56H0l38-56Z" fill="#dc143c"/>
+    <path d="M0 28h32l19 28-19 28H0l19-28Z" fill="#fff"/>
+    <rect x="54" y="24" width="44" height="64" rx="11" fill="#fff"/>
+    <circle cx="76" cy="80" r="4" fill="#dc143c"/>
+  </g>
+  <text x="225" y="142" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="68" font-weight="800" letter-spacing="-2">Nepal Phone</text>
+  <text x="230" y="194" fill="#b9d6ed" font-family="Inter,Segoe UI,sans-serif" font-size="25">Simple phone utilities, built for Nepal.</text>
+  <rect x="230" y="232" width="270" height="5" rx="3" fill="url(#accent)">
+    <animate attributeName="width" values="270;340;270" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  <text x="230" y="282" fill="#80a9c8" font-family="ui-monospace,SFMono-Regular,monospace" font-size="18">@diwaskhatri/nepal-phone</text>
+  <g transform="translate(1010 118)" opacity=".9">
+    <rect width="96" height="150" rx="18" fill="none" stroke="#fff" stroke-width="5"/>
+    <rect x="20" y="25" width="56" height="8" rx="4" fill="#dc143c"/>
+    <rect x="20" y="52" width="56" height="8" rx="4" fill="#fff" opacity=".8"/>
+    <rect x="20" y="79" width="35" height="8" rx="4" fill="#fff" opacity=".8"/>
+    <circle cx="48" cy="124" r="8" fill="#dc143c">
+      <animate attributeName="opacity" values="1;.35;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

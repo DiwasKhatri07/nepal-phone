@@ -1,0 +1,41 @@
+{
+  "name": "@diwaskhatri/nepal-phone",
+  "version": "1.0.0",
+  "description": "A tiny, dependency-free JavaScript toolkit for validating, normalizing, and formatting Nepali mobile numbers.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Diwas Khatri",
+    "url": "https://github.com/DiwasKhatri07"
+  },
+  "homepage": "https://github.com/DiwasKhatri07/nepal-phone#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DiwasKhatri07/nepal-phone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DiwasKhatri07/nepal-phone/issues"
+  },
+  "funding": {
+    "type": "ko-fi",
+    "url": "https://ko-fi.com/diwaskhatri"
+  },
+  "keywords": ["nepal", "nepali", "phone", "mobile", "validator", "telephone", "javascript", "typescript"],
+  "files": ["src", "README.md", "LICENSE", "CODE_OF_CONDUCT.md"],
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    }
+  },
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "scripts": {
+    "test": "node --test",
+    "test:watch": "node --test --watch",
+    "check": "npm test && npm pack --dry-run"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
