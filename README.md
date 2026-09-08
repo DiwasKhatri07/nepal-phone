@@ -107,6 +107,25 @@ The project includes both Node's built-in test runner and Jest. Run `npm run tes
 
 Version 1.1.0 adds `getNepalPhoneParts(value)`, which is useful when an application needs separate country-code, national-number, and international-number fields without repeating parsing logic.
 
+## Automatic publishing
+
+The workflow in [`.github/workflows/publish.yml`](./.github/workflows/publish.yml) runs when a GitHub Release is published or when manually started. It tests the package and can publish to npm and GitHub Packages.
+
+To enable npm publishing, add a repository secret named `NPM_TOKEN` containing an npm granular access token with package publishing permission and two-factor-authentication bypass enabled.
+
+To enable GitHub Packages publishing, add a repository secret named `GH_PACKAGES_TOKEN` containing a GitHub classic personal access token with `read:packages` and `write:packages`, then add the repository variable `ENABLE_GITHUB_PACKAGES` with the value `true`. The separate variable keeps npm publishing from failing when GitHub Packages has not been configured yet.
+
+After configuring the secrets, publish a GitHub Release or run the **Publish package** workflow manually from the Actions tab.
+
+For a local release, update the version, run both test suites, and create a tag:
+
+```bash
+npm version minor
+npm test
+npm run test:jest
+git push origin main --follow-tags
+```
+
 ## Roadmap
 
 - [ ] Add configurable mobile-prefix metadata
