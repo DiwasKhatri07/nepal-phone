@@ -37,7 +37,8 @@ npm install @diwaskhatri/nepal-phone
 import {
   isNepalPhone,
   normalizeNepalPhone,
-  formatNepalPhone
+  formatNepalPhone,
+  getNepalPhoneParts
 } from "@diwaskhatri/nepal-phone";
 
 isNepalPhone("984-123-4567");
@@ -48,6 +49,13 @@ normalizeNepalPhone("+977 9841234567");
 
 formatNepalPhone("9841234567");
 // "+977 9841234567"
+
+getNepalPhoneParts("+977 9841234567");
+// {
+//   countryCode: "+977",
+//   nationalNumber: "9841234567",
+//   internationalNumber: "+9779841234567"
+// }
 ```
 
 ## API
@@ -63,6 +71,10 @@ Removes common formatting characters and an optional `+977` or `977` country cod
 ### `formatNepalPhone(value)`
 
 Returns a valid number in the canonical `+977 98XXXXXXXX` format. Throws a `TypeError` when the value is invalid.
+
+### `getNepalPhoneParts(value)`
+
+Returns the country code, normalized national number, and international number for a valid Nepali mobile number. Throws a `TypeError` for invalid input.
 
 ### `NEPAL_COUNTRY_CODE_PREFIX`
 
@@ -85,10 +97,15 @@ git clone https://github.com/DiwasKhatri07/nepal-phone.git
 cd nepal-phone
 npm install
 npm test
+npm run test:jest
 npm run check
 ```
 
-Please add or update tests when changing behavior. The project uses Node's built-in test runner to keep the package lightweight.
+The project includes both Node's built-in test runner and Jest. Run `npm run test:jest` to execute the Jest examples in `test/index.jest.test.js`. Please add or update tests when changing behavior.
+
+## Release 1.1.0
+
+Version 1.1.0 adds `getNepalPhoneParts(value)`, which is useful when an application needs separate country-code, national-number, and international-number fields without repeating parsing logic.
 
 ## Roadmap
 

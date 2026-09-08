@@ -23,7 +23,6 @@ export function normalizeNepalPhone(value) {
 
 /**
  * Check whether a value is a valid Nepali mobile number.
- * Accepts local numbers (98XXXXXXXX / 97XXXXXXXX) and +977/977 forms.
  * @param {string|number} value
  * @returns {boolean}
  */
@@ -35,7 +34,6 @@ export function isNepalPhone(value) {
  * Format a valid Nepali mobile number as +977 98XXXXXXXX.
  * @param {string|number} value
  * @returns {string}
- * @throws {TypeError} when the value is not a valid Nepali mobile number
  */
 export function formatNepalPhone(value) {
   const number = normalizeNepalPhone(value);
@@ -43,6 +41,25 @@ export function formatNepalPhone(value) {
     throw new TypeError("Invalid Nepali mobile number");
   }
   return `+${NEPAL_COUNTRY_CODE} ${number}`;
+}
+
+/**
+ * Return useful, normalized parts of a valid Nepali mobile number.
+ * @param {string|number} value
+ * @returns {{countryCode: string, nationalNumber: string, internationalNumber: string}}
+ * @throws {TypeError} when the value is invalid
+ */
+export function getNepalPhoneParts(value) {
+  const nationalNumber = normalizeNepalPhone(value);
+  if (!isNepalPhone(nationalNumber)) {
+    throw new TypeError("Invalid Nepali mobile number");
+  }
+
+  return {
+    countryCode: `+${NEPAL_COUNTRY_CODE}`,
+    nationalNumber,
+    internationalNumber: `+${NEPAL_COUNTRY_CODE}${nationalNumber}`
+  };
 }
 
 export const NEPAL_COUNTRY_CODE_PREFIX = `+${NEPAL_COUNTRY_CODE}`;

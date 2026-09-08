@@ -1,6 +1,6 @@
 {
   "name": "@diwaskhatri/nepal-phone",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A tiny, dependency-free JavaScript toolkit for validating, normalizing, and formatting Nepali mobile numbers.",
   "type": "module",
   "license": "MIT",
@@ -20,8 +20,22 @@
     "type": "ko-fi",
     "url": "https://ko-fi.com/diwaskhatri"
   },
-  "keywords": ["nepal", "nepali", "phone", "mobile", "validator", "telephone", "javascript", "typescript"],
-  "files": ["src", "README.md", "LICENSE", "CODE_OF_CONDUCT.md"],
+  "keywords": [
+    "nepal",
+    "nepali",
+    "phone",
+    "mobile",
+    "validator",
+    "telephone",
+    "javascript",
+    "typescript"
+  ],
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE",
+    "CODE_OF_CONDUCT.md"
+  ],
   "exports": {
     ".": {
       "types": "./src/index.d.ts",
@@ -31,11 +45,15 @@
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "scripts": {
-    "test": "node --test",
+    "test": "node --test test/index.test.js",
     "test:watch": "node --test --watch",
-    "check": "npm test && npm pack --dry-run"
+    "check": "npm test && npm pack --dry-run",
+    "test:jest": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "jest": "^30.1.3"
   }
 }
