@@ -33,7 +33,7 @@ jobs:
 
   publish-github:
     name: Publish to GitHub Packages
-    if: ${{ secrets.GH_PACKAGES_TOKEN != '' }}
+    if: ${{ vars.ENABLE_GITHUB_PACKAGES == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
