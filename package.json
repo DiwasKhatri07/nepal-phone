@@ -11,7 +11,7 @@
   "homepage": "https://github.com/DiwasKhatri07/nepal-phone#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DiwasKhatri07/nepal-phone.git"
+    "url": "git+https://github.com/DiwasKhatri07/nepal-phone.git"
   },
   "bugs": {
     "url": "https://github.com/DiwasKhatri07/nepal-phone/issues"
@@ -55,5 +55,8 @@
   },
   "devDependencies": {
     "jest": "^30.1.3"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
