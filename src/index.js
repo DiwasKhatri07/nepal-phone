@@ -52,7 +52,7 @@ export function formatNepalPhone(value) {
 export function getNepalPhoneParts(value) {
   const nationalNumber = normalizeNepalPhone(value);
   if (!isNepalPhone(nationalNumber)) {
-    throw new TypeError("Invalid Nepali mobile number");
+    throw new TypeError("Invalid Nepali mobile number TRY WITH 98 / 97 Prefix");
   }
 
   return {
